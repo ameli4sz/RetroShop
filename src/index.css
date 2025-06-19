@@ -1,0 +1,134 @@
+/* index.css */
+
+/* Reset i podstawowe style */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f0f0f0, #dcdcdc);
+  color: #333;
+}
+
+/* --- LoginPage --- */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f0f0, #dcdcdc);
+}
+
+.login-form {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.login-form h2 {
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #222;
+  text-align: center;
+}
+
+.login-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+  outline: none;
+  border-color: #4f46e5; /* fioletowy */
+  box-shadow: 0 0 6px #a5b4fc;
+}
+
+.login-form button {
+  width: 100%;
+  background-color: #b5a3b6;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #dc8abc;
+}
+
+/* --- Dashboard --- */
+
+.dashboard-container {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-container h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.dashboard-button-logout {
+  margin-top: 24px;
+  background-color: #dc8abc;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-button-logout:hover {
+  background-color: #b91c1c;
+}
+
+/* --- Products --- */
+
+.products-container {
+  padding: 24px;
+  font-size: 1.2rem;
+}
+
+button {
+  margin: 20px 10px 10px;
+  background-color: #dc8abc;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
