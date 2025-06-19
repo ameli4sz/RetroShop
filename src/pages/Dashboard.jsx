@@ -1,8 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import ProductStats from "../components/dashboard/ProductcStats";
+import ProductList from "../components/dashboard/ProductsList";
+import DashboardButtons from "../components/dashboard/DashboardButtons";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
@@ -11,18 +15,37 @@ const Dashboard = () => {
     }
   }, [navigate]);
 
+  useEffect(() => {
+    fetch("http://localhost:3001/products") // <-- tutaj małe 'products'
+      .then((res) => {
+        if (!res.ok) throw new Error("Błąd sieci");
+        return res.json();
+      })
+      .then((data) => {
+        const availableProducts = data.filter(
+          (product) => product.status === "Dostępny"
+        );
+        setProducts(availableProducts);
+      })
+      .catch((err) => {
+        console.error("Błąd pobierania produktów:", err);
+      });
+  }, []);
+
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
     navigate("/");
   };
 
   return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold mb-4">Witaj w panelu RetroShop 👋</h1>
-      <button
-        onClick={handleLogout}
-        className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
-      >
+    <div className="dashboard-container">
+      <h1>Witaj w panelu RetroShop </h1>
+
+      <DashboardButtons />
+      <ProductStats />
+      <ProductList products={products} />
+
+      <button onClick={handleLogout} className="dashboard-button-logout">
         Wyloguj się
       </button>
     </div>
