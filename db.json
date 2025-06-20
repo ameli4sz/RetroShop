@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Gra 8-bitowa",
+      "description": "Klasyczna gra z lat 80.",
+      "price": 99,
+      "status": "Dostępny",
+      "image": "https://via.placeholder.com/250x150?text=Gra+8-bitowa"
+    },
+    {
+      "id": "2",
+      "name": "Konsola Retro",
+      "description": "Kultowa konsola z lat 90.",
+      "price": 299,
+      "status": "Zarezerwowany",
+      "image": "https://via.placeholder.com/250x150?text=Konsola+Retro"
+    },
+    {
+      "id": "3",
+      "name": "Joystick Retro",
+      "description": "Joystick do konsol retro.",
+      "price": 49,
+      "status": "Sprzedany",
+      "image": "https://via.placeholder.com/250x150?text=Joystick+Retro"
+    },
+    {
+      "id": "ed4a",
+      "name": "Bluza Adidas Czerwona",
+      "description": "Bluza z lat 80.",
+      "price": 230,
+      "status": "Dostępny",
+      "image": ""
+    }
+  ]
+}
