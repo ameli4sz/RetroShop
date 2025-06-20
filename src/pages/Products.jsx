@@ -24,6 +24,21 @@ const Products = () => {
       });
   }, []);
 
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`http://localhost:3001/products/${id}`, {
+        method: "DELETE",
+      });
+      setProducts((prev) => prev.filter((p) => p.id !== id));
+    } catch (err) {
+      console.error("Błąd usuwania produktu:", err);
+    }
+  };
+
+  const handleEdit = (id) => {
+    navigate(`/edit-product/${id}`);
+  };
+
   const goToDashboard = () => {
     navigate("/dashboard");
   };
@@ -34,10 +49,8 @@ const Products = () => {
   return (
     <div>
       <h1>Lista produktów</h1>
-      <button onClick={() => navigate("/add-product")}>
-        Dodaj nowy produkt
-      </button>
-      <ProductList products={products} />
+      <button onClick={() => navigate("/add-product")}>Dodaj nowy produkt</button>
+      <ProductList products={products} onDelete={handleDelete} onEdit={handleEdit} />
       <button onClick={goToDashboard}>Przejdź do Dashboard</button>
     </div>
   );

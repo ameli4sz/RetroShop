@@ -17,14 +17,6 @@
       "image": "https://via.placeholder.com/250x150?text=Konsola+Retro"
     },
     {
-      "id": "3",
-      "name": "Joystick Retro",
-      "description": "Joystick do konsol retro.",
-      "price": 49,
-      "status": "Sprzedany",
-      "image": "https://via.placeholder.com/250x150?text=Joystick+Retro"
-    },
-    {
       "id": "ed4a",
       "name": "Bluza Adidas Czerwona",
       "description": "Bluza z lat 80.",
