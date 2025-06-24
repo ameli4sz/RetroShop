@@ -47,11 +47,16 @@ const Products = () => {
   if (error) return <p>Błąd: {error}</p>;
 
   return (
-    <div>
+    <div className="product-container">
       <h1>Lista produktów</h1>
+      <div className="product-button">
       <button onClick={() => navigate("/add-product")}>Dodaj nowy produkt</button>
-      <ProductList products={products} onDelete={handleDelete} onEdit={handleEdit} />
+      </div>
+      <div className="product-button">
       <button onClick={goToDashboard}>Przejdź do Dashboard</button>
+      </div>
+      <ProductList products={products} onDelete={handleDelete} onEdit={handleEdit} />
+      
     </div>
   );
 };

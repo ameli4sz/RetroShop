@@ -4,8 +4,10 @@ const DashboardButtons = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <button onClick={() => navigate("/products")}>
+    <div className="dashboard-button" >
+      <button
+        onClick={() => navigate("/products")}
+      >
         📋 Zobacz wszystkie produkty
       </button>
     </div>

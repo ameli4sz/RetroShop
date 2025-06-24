@@ -3,8 +3,8 @@
     {
       "name": "Gra 8-bitowa",
       "description": "Klasyczna gra z lat 80.",
-      "price": 102,
-      "status": "Dostępny",
+      "price": 150,
+      "status": "Sprzedany",
       "image": "https://www.mediaexpert.pl/media/cache/resolve/gallery/images/50/5074656/Swinka-Peppa-Swiatowe-Przygody-Gra-PS4-front.jpg",
       "id": "1"
     },
@@ -12,7 +12,7 @@
       "name": "Konsola Retro",
       "description": "Kultowa konsola z lat 90.",
       "price": 299,
-      "status": "Zarezerwowany",
+      "status": "Sprzedany",
       "image": "https://via.placeholder.com/250x150?text=Konsola+Retro",
       "id": "2"
     },
@@ -20,9 +20,25 @@
       "name": "Bluza Adidas Czerwona",
       "description": "Bluza z lat 80.",
       "price": 230,
-      "status": "Dostępny",
+      "status": "Sprzedany",
       "image": "",
       "id": "ed4a"
+    },
+    {
+      "id": "44d5",
+      "name": "laptop",
+      "description": "kiepski",
+      "price": 1500,
+      "status": "Dostępny",
+      "image": ""
+    },
+    {
+      "id": "6309",
+      "name": "biurko",
+      "description": "drewnaine",
+      "price": 100,
+      "status": "Zarezerwowany",
+      "image": ""
     }
   ]
 }

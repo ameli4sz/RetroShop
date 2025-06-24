@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProductList from "../components/dashboard/ProductsList";
-import ProductStats from "../components/dashboard/ProductcStats";
+import ProductStatusCharts from "../components/dashboard/ProductcStats";
 import DashboardButtons from "../components/dashboard/DashboardButtons";
+
 
 
 const Dashboard = () => {
@@ -22,12 +23,12 @@ const Dashboard = () => {
         if (!res.ok) throw new Error("Błąd sieci");
         return res.json();
       })
-      .then((data) => {
-        const availableProducts = data.filter(
-          (product) => product.available === true
-        );
-        setProducts(availableProducts);
-      })
+     .then((data) => {
+  const availableProducts = data.filter(
+    (product) => product.status === "Dostępny"
+  );
+  setProducts(availableProducts);
+})
       .catch((err) => {
         console.error("Błąd pobierania produktów:", err);
       });
@@ -47,16 +48,18 @@ const Dashboard = () => {
       <h1>Witaj w panelu RetroShop </h1>
 
       <DashboardButtons />
-      <ProductStats />
+       <div className="dashboard-button">
+      <button onClick={handleLogout} >
+        Wyloguj się
+      </button>
+      </div>
+      <ProductStatusCharts/>
       <ProductList
         products={products}
         onDelete={() => {}}
         onEdit={handleEdit}
       />
-
-      <button onClick={handleLogout} className="dashboard-button-logout">
-        Wyloguj się
-      </button>
+     
     </div>
   );
 };

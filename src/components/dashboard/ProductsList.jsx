@@ -23,8 +23,10 @@ const ProductList = ({ products = [], onDelete, onEdit }) => {
           onChange={(e) => setSearchTerm(e.target.value)}
           className="search-bar"
         />
+        <div className="sort-button">
         <button onClick={() => setSortOrder("asc")}>Cena rosnąco</button>
         <button onClick={() => setSortOrder("desc")}>Cena malejąco</button>
+      </div>
       </div>
 
       <div className="products-grid">
