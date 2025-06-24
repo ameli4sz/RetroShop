@@ -1,32 +1,39 @@
 import React from "react";
 
 const ProductCard = ({ product, onDelete, onEdit }) => {
+  const imageSrc = product.image
+    ? product.image
+    : "https://via.placeholder.com/250x150?text=Brak+zdjęcia";
+
   return (
-    <div style={styles.card}>
-      <h3>{product.name}</h3>
-      <p>Cena: {product.price} zł</p>
-      <button onClick={() => onEdit(product.id)} tyle={{ ...styles.btn, backgroundColor: "pink" }}>Edytuj</button>
-      <button onClick={() => onDelete(product.id)} style={{ ...styles.btn, backgroundColor: "red" }}>Usuń</button>
+    <div className="product-card">
+      <img
+        src={imageSrc}
+        alt={product.name}
+        style={{
+          width: "100%",
+          height: "150px",
+          objectFit: "cover",
+          borderRadius: "8px",
+          marginBottom: "10px",
+          border: "1px solid #ddd"
+        }}
+      />
+      <h3 className="product-title">{product.name}</h3>
+      <p className="product-price">Opis: {product.description}</p>
+      <p className="product-price">Cena: {product.price} zł</p>
+      <p className="product-price">Dostępność: {product.status}</p>
+      <div className="card-buttons">
+        <button onClick={() => onEdit(product.id)}>Edytuj</button>
+        <button
+          onClick={() => onDelete(product.id)}
+          style={{ backgroundColor: "#ff4d4d" }}
+        >
+          Usuń
+        </button>
+      </div>
     </div>
   );
-};
-
-const styles = {
-  card: {
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    padding: "16px",
-    width: "200px",
-  },
-  btn: {
-    marginTop: "10px",
-    marginRight: "10px",
-    padding: "6px 12px",
-    backgroundColor: "#007bff",
-    color: "white",
-    border: "none",
-    cursor: "pointer",
-  },
 };
 
 export default ProductCard;

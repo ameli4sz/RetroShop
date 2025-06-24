@@ -14,24 +14,20 @@ const ProductList = ({ products = [], onDelete, onEdit }) => {
     );
 
   return (
-    <div>
-      <div style={styles.controls}>
+    <div className="container">
+      <div className="sort-buttons">
         <input
           type="text"
           placeholder="Szukaj po nazwie"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          style={styles.input}
+          className="search-bar"
         />
-        <button onClick={() => setSortOrder("asc")} style={styles.button}>
-          Cena rosnąco
-        </button>
-        <button onClick={() => setSortOrder("desc")} style={styles.button}>
-          Cena malejąco
-        </button>
+        <button onClick={() => setSortOrder("asc")}>Cena rosnąco</button>
+        <button onClick={() => setSortOrder("desc")}>Cena malejąco</button>
       </div>
 
-      <div style={styles.list}>
+      <div className="products-grid">
         {filteredAndSorted.map((product) => (
           <ProductCard
             key={product.id}
@@ -45,27 +41,5 @@ const ProductList = ({ products = [], onDelete, onEdit }) => {
   );
 };
 
-const styles = {
-  list: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "20px",
-  },
-  controls: {
-    marginBottom: "20px",
-    display: "flex",
-    gap: "10px",
-    alignItems: "center",
-  },
-  input: {
-    padding: "8px",
-    fontSize: "16px",
-    flex: "1",
-  },
-  button: {
-    padding: "8px 12px",
-    cursor: "pointer",
-  },
-};
-
 export default ProductList;
+

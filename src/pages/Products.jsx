@@ -36,7 +36,7 @@ const Products = () => {
   };
 
   const handleEdit = (id) => {
-    navigate(`/edit-product/${id}`);
+    navigate(`/edit/${id}`);
   };
 
   const goToDashboard = () => {

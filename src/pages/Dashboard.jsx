@@ -1,8 +1,9 @@
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import ProductStats from "../components/dashboard/ProductcStats";
 import ProductList from "../components/dashboard/ProductsList";
+import ProductStats from "../components/dashboard/ProductcStats";
 import DashboardButtons from "../components/dashboard/DashboardButtons";
+
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -16,14 +17,14 @@ const Dashboard = () => {
   }, [navigate]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/products") // <-- tutaj małe 'products'
+    fetch("http://localhost:3001/products")
       .then((res) => {
         if (!res.ok) throw new Error("Błąd sieci");
         return res.json();
       })
       .then((data) => {
         const availableProducts = data.filter(
-          (product) => product.status === "Dostępny"
+          (product) => product.available === true
         );
         setProducts(availableProducts);
       })
@@ -31,6 +32,10 @@ const Dashboard = () => {
         console.error("Błąd pobierania produktów:", err);
       });
   }, []);
+
+  const handleEdit = (id) => {
+    navigate(`/edit/${id}`);
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
@@ -43,7 +48,11 @@ const Dashboard = () => {
 
       <DashboardButtons />
       <ProductStats />
-      <ProductList products={products} />
+      <ProductList
+        products={products}
+        onDelete={() => {}}
+        onEdit={handleEdit}
+      />
 
       <button onClick={handleLogout} className="dashboard-button-logout">
         Wyloguj się

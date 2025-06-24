@@ -8,7 +8,7 @@ const EditProduct = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [available, setAvailable] = useState("");
+  const [status, setStatus] = useState("Dostępny");
   const [image, setImage] = useState("");
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const EditProduct = () => {
         setName(data.name || "");
         setDescription(data.description || "");
         setPrice(data.price || "");
-        setAvailable(String(data.available));
+        setStatus(data.status || "Dostępny");
         setImage(data.image || "");
       })
       .catch((err) => console.error("Błąd podczas pobierania produktu:", err));
@@ -31,7 +31,7 @@ const EditProduct = () => {
       name,
       description,
       price: parseFloat(price),
-      available: available === "true",
+      status,
       image
     };
 
@@ -50,6 +50,7 @@ const EditProduct = () => {
     <div className="edit-product-form">
       <h2>Edytuj produkt</h2>
       <form onSubmit={handleSubmit}>
+
         <label>Nazwa:</label>
         <input
           type="text"
@@ -75,13 +76,14 @@ const EditProduct = () => {
 
         <label>Dostępność:</label>
         <select
-          value={available}
-          onChange={(e) => setAvailable(e.target.value)}
+          value={status}
+          onChange={(e) => setStatus(e.target.value)}
           required
         >
           <option value="">Wybierz</option>
-          <option value="true">Dostępny</option>
-          <option value="false">Niedostępny</option>
+          <option value="Dostępny">Dostępny</option>
+          <option value="Niedostępny">Niedostępny</option>
+          <option value="Zarezerwowany">Zarezerwowany</option>
         </select>
 
         <label>URL obrazka:</label>

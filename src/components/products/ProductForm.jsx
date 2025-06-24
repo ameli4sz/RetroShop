@@ -55,11 +55,18 @@ const ProductForm = ({ onSubmit }) => {
         onChange={handleChange}
         required
       />
-      <select name="status" value={formData.status} onChange={handleChange}>
-        <option>Dostępny</option>
-        <option>Zarezerwowany</option>
-        <option>Sprzedany</option>
-      </select>
+       <select
+  name="status"
+  value={formData.status}
+  onChange={handleChange}
+  required
+>
+  <option value="">Wybierz status</option>
+  <option value="Dostępny">Dostępny</option>
+  <option value="Zarezerwowany">Zarezerwowany</option>
+  <option value="Sprzedany">Sprzedany</option>
+</select>
+
       <input
         name="image"
         placeholder="URL obrazka"
