@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 
 const withAuthProtection = (WrappedComponent) => {
   const ProtectedComponent = (props) => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
     if (!isLoggedIn) {
       return <Navigate to="/" replace />;
