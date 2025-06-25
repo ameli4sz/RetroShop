@@ -11,12 +11,12 @@ const ProductCard = ({ product, onDelete, onEdit }) => {
         src={imageSrc}
         alt={product.name}
         style={{
-          width: "100%",
-          height: "150px",
+          width: "200px",
+          height: "200px",
           objectFit: "cover",
           borderRadius: "8px",
           marginBottom: "10px",
-          border: "1px solid #ddd"
+          border: "1px solid #ddd",
         }}
       />
       <h3 className="product-title">{product.name}</h3>

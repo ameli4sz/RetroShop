@@ -1,38 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ProductList from "../components/dashboard/ProductsList";
+import { motion } from "framer-motion";
+import useProductStore from "../store/productStore";
 
 const Products = () => {
   const navigate = useNavigate();
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+
+  const { products, loading, error, fetchProducts, deleteProduct } =
+    useProductStore();
 
   useEffect(() => {
-    fetch("http://localhost:3001/products")
-      .then((res) => {
-        if (!res.ok) throw new Error("Błąd pobierania produktów");
-        return res.json();
-      })
-      .then((data) => {
-        setProducts(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
+    fetchProducts();
+  }, [fetchProducts]);
 
   const handleDelete = async (id) => {
-    try {
-      await fetch(`http://localhost:3001/products/${id}`, {
-        method: "DELETE",
-      });
-      setProducts((prev) => prev.filter((p) => p.id !== id));
-    } catch (err) {
-      console.error("Błąd usuwania produktu:", err);
-    }
+    await deleteProduct(id);
   };
 
   const handleEdit = (id) => {
@@ -47,17 +30,27 @@ const Products = () => {
   if (error) return <p>Błąd: {error}</p>;
 
   return (
-    <div className="product-container">
-      <h1>Lista produktów</h1>
+    <motion.div
+      className="product-container"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h1>Lista wszystkich produktów</h1>
       <div className="product-button">
-      <button onClick={() => navigate("/add-product")}>Dodaj nowy produkt</button>
+        <button onClick={() => navigate("/add-product")}>
+          Dodaj nowy produkt
+        </button>
       </div>
       <div className="product-button">
-      <button onClick={goToDashboard}>Przejdź do Dashboard</button>
+        <button onClick={goToDashboard}>Przejdź do Dashboard</button>
       </div>
-      <ProductList products={products} onDelete={handleDelete} onEdit={handleEdit} />
-      
-    </div>
+      <ProductList
+        products={products}
+        onDelete={handleDelete}
+        onEdit={handleEdit}
+      />
+    </motion.div>
   );
 };
 
