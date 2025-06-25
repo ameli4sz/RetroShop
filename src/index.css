@@ -7,7 +7,7 @@
 
 /* === Body & Global === */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background: #f9f9f9;
   color: #333;
   line-height: 1.5;
@@ -31,7 +31,6 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 1rem;
-
 }
 
 button:hover {
@@ -96,15 +95,15 @@ button:hover {
 }
 
 /* === Dashboard === */
-.dashboard-container, 
+.dashboard-container,
 .product-container {
   padding: 32px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.dashboard-button, 
-.product-button, 
+.dashboard-button,
+.product-button,
 .sort-button {
   display: flex;
   justify-content: flex-end;
@@ -119,7 +118,6 @@ button:hover {
   margin-bottom: 24px;
 }
 
-
 /* === Product List & Cards === */
 .products-grid {
   display: flex;
@@ -132,7 +130,7 @@ button:hover {
 .product-card {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 250px;
   text-align: center;
@@ -141,7 +139,7 @@ button:hover {
 
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .product-title {
@@ -237,6 +235,3 @@ button:hover {
   max-height: 200px;
   object-fit: contain;
 }
-
-
-

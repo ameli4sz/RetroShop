@@ -1,38 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ProductList from "../components/dashboard/ProductsList";
 import ProductStatusCharts from "../components/dashboard/ProductcStats";
 import DashboardButtons from "../components/dashboard/DashboardButtons";
-
-
+import useAuth from "../hooks/useAuth";
+import useProductStore from "../store/productStore"; // ⬅️ zmień ścieżkę jeśli inna
+import { motion } from "framer-motion";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const [products, setProducts] = useState([]);
+  const { products, fetchProducts } = useProductStore();
+
+  useAuth();
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    if (isLoggedIn !== "true") {
-      navigate("/");
-    }
-  }, [navigate]);
+    fetchProducts();
+  }, [fetchProducts]);
 
-  useEffect(() => {
-    fetch("http://localhost:3001/products")
-      .then((res) => {
-        if (!res.ok) throw new Error("Błąd sieci");
-        return res.json();
-      })
-     .then((data) => {
-  const availableProducts = data.filter(
+  const availableProducts = products.filter(
     (product) => product.status === "Dostępny"
   );
-  setProducts(availableProducts);
-})
-      .catch((err) => {
-        console.error("Błąd pobierania produktów:", err);
-      });
-  }, []);
 
   const handleEdit = (id) => {
     navigate(`/edit/${id}`);
@@ -44,23 +31,26 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard-container">
+    <motion.div
+      className="dashboard-container"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <h1>Witaj w panelu RetroShop </h1>
 
       <DashboardButtons />
-       <div className="dashboard-button">
-      <button onClick={handleLogout} >
-        Wyloguj się
-      </button>
+      <div className="dashboard-button">
+        <button onClick={handleLogout}>Wyloguj się</button>
       </div>
-      <ProductStatusCharts/>
+      <ProductStatusCharts />
       <ProductList
-        products={products}
+        products={availableProducts}
         onDelete={() => {}}
         onEdit={handleEdit}
+        showFilterButtons={false}
       />
-     
-    </div>
+    </motion.div>
   );
 };
 

@@ -2,10 +2,10 @@
   "products": [
     {
       "name": "Gra 8-bitowa",
-      "description": "Klasyczna gra z lat 80.",
-      "price": 150,
+      "description": "Klasyczna gra z lat 90.",
+      "price": 100,
       "status": "Sprzedany",
-      "image": "https://www.mediaexpert.pl/media/cache/resolve/gallery/images/50/5074656/Swinka-Peppa-Swiatowe-Przygody-Gra-PS4-front.jpg",
+      "image": "https://i.ebayimg.com/00/s/MTI5NVg4MTU=/z/L8wAAOSwFiJhTPxq/$_57.JPG?set_id=8800005007",
       "id": "1"
     },
     {
@@ -13,7 +13,7 @@
       "description": "Kultowa konsola z lat 90.",
       "price": 299,
       "status": "Sprzedany",
-      "image": "https://via.placeholder.com/250x150?text=Konsola+Retro",
+      "image": "https://azaris.pl/userdata/public/gfx/9867/KONSOLA-RETRO-GRA-TELEWIZYJNA-620-GIER-AV-2-PADY-PEGASUS.jpg",
       "id": "2"
     },
     {
@@ -21,24 +21,96 @@
       "description": "Bluza z lat 80.",
       "price": 230,
       "status": "Sprzedany",
-      "image": "",
-      "id": "ed4a"
+      "image": "https://i.etsystatic.com/18363295/r/il/a7be14/3058649733/il_570xN.3058649733_n5tm.jpg",
+      "id": "3"
     },
     {
-      "id": "44d5",
-      "name": "laptop",
-      "description": "kiepski",
-      "price": 1500,
+      "name": "Walkman Sony",
+      "description": "Odtwarzacz kasetowy Sony z lat 80.",
+      "price": 180,
       "status": "Dostępny",
-      "image": ""
+      "image": "https://www.rtvmaniak.pl/wp-content/uploads/rtvmaniak/2019/07/sony-walkman-gl.jpg",
+      "id": "4"
     },
     {
-      "id": "6309",
-      "name": "biurko",
-      "description": "drewnaine",
-      "price": 100,
+      "name": "Plakat filmowy Retro",
+      "description": "Plakat kultowego filmu z lat 70.",
+      "price": 119,
+      "status": "Dostępny",
+      "image": "https://dydopostergallery.com/978-large_default/mechaniczna-pomarancza-clockwork-orange-kubrick-zebrowski.jpg",
+      "id": "5"
+    },
+    {
+      "name": "Gramofon Vintage",
+      "description": "Klasyczny gramofon z lat 50.",
+      "price": 700,
       "status": "Zarezerwowany",
-      "image": ""
+      "image": "https://m.media-amazon.com/images/I/61JbRhpElML._UF1000,1000_QL80_.jpg",
+      "id": "6"
+    },
+    {
+      "name": "Bluza Nike",
+      "description": "Bluza z lat 90., kultowe logo MTV.",
+      "price": 260,
+      "status": "Sprzedany",
+      "image": "https://a.allegroimg.com/s1024/0c49b8/ab92bd33490784fd572b55a46b12",
+      "id": "8"
+    },
+    {
+      "name": "Zegarek Casio",
+      "description": "Klasyczny cyfrowy zegarek Casio z lat 80.",
+      "price": 150,
+      "status": "Dostępny",
+      "image": "https://happytime.com.pl/120531-superlarge_default/zegarek-casio-a120weg-9aef.jpg",
+      "id": "9"
+    },
+    {
+      "name": "Koszulka z nadrukiem Pac-Man",
+      "description": "Koszulka z motywem gry Pac-Man.",
+      "price": 90,
+      "status": "Dostępny",
+      "image": "https://superheroes.com.pl/userdata/public/gfx/4140/koszulka-Namco-Pac-Man-2.jpg",
+      "id": "10"
+    },
+    {
+      "name": "Joystick Atari",
+      "description": "Oryginalny joystick do Atari.",
+      "price": 130,
+      "status": "Zarezerwowany",
+      "image": "https://shop.mumio.dev/images/oz816/0-1000/Joystick-Atari-2600-zgodny-z-Kempston_%5B358%5D_780.jpg",
+      "id": "11"
+    },
+    {
+      "name": "Plakat zespołu Queen",
+      "description": "Plakat z koncertu Queen z lat 70.",
+      "price": 70,
+      "status": "Dostępny",
+      "image": "https://queenonlinestore.com/cdn/shop/files/SharedImage-119195.jpg?v=1741953116",
+      "id": "12"
+    },
+    {
+      "name": "Torba na ramię Retro",
+      "description": "Torba w stylu vintage, wykonana z eko-skóry.",
+      "price": 180,
+      "status": "Dostępny",
+      "image": "https://a.allegroimg.com/original/035ae9/796ad036436ea6e00eb277c05c32/BV-VINTAGE-TORBA-MESKA-NA-RAMIE-UK",
+      "id": "13"
+    },
+    {
+      "name": "Skarpetki w grochy",
+      "description": "Kolorowe skarpetki w stylu retro.",
+      "price": 25,
+      "status": "Dostępny",
+      "image": "https://a.allegroimg.com/original/11c2ac/99ce423a43be8c3776dadd65a04e/Todo-Socks-Vegas-Skarpetki-w-kropki-grochy-39-42",
+      "id": "14"
+    },
+    {
+      "name": "Plakat \"Back to the Future\"",
+      "description": "Plakat kultowego filmu z lat 80.",
+      "price": 60,
+      "status": "Sprzedany",
+      "image": "https://ecsmedia.pl/c/back-to-the-future-plakat-61x91cm-b-iext132801202.jpg",
+      "id": "15"
     }
   ]
 }
